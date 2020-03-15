@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CarregaMenu.cs" />
+     <Compile Include="Assets\Scripts\ChaveController.cs" />
      <Compile Include="Assets\Scripts\ConfigSom.cs" />
+     <Compile Include="Assets\Scripts\DoorController.cs" />
      <Compile Include="Assets\Scripts\InstanciaPedras.cs" />
+     <Compile Include="Assets\Scripts\key.cs" />
      <Compile Include="Assets\Scripts\MenuControle.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RotacionaPedra.cs" />
