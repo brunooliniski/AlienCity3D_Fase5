@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(CharacterController))]
@@ -12,13 +13,12 @@ public class PlayerController : MonoBehaviour {
 	protected Vector3 move = Vector3.zero;
 	private bool jump = false;
 
-
-	
 	void Start()
 	{
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator>();
 		anim.SetTrigger("Parado");
+		
 	}
 
 	void Update()

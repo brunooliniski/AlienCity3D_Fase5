@@ -12,6 +12,7 @@
           <e p="ChaveController.cs" t="Include" />
           <e p="ConfigSom.cs" t="Include" />
           <e p="DoorController.cs" t="Include" />
+          <e p="HUD.cs" t="Include" />
           <e p="InstanciaPedras.cs" t="Include" />
           <e p="key.cs" t="Include" />
           <e p="MenuControle.cs" t="Include" />

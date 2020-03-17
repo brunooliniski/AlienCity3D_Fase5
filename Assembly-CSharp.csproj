@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\ChaveController.cs" />
      <Compile Include="Assets\Scripts\ConfigSom.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
+     <Compile Include="Assets\Scripts\HUD.cs" />
      <Compile Include="Assets\Scripts\InstanciaPedras.cs" />
      <Compile Include="Assets\Scripts\key.cs" />
      <Compile Include="Assets\Scripts\MenuControle.cs" />
