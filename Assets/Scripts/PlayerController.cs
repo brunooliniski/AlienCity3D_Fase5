@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour {
@@ -12,14 +13,22 @@ public class PlayerController : MonoBehaviour {
 	protected Vector3 gravidade = Vector3.zero;
 	protected Vector3 move = Vector3.zero;
 	private bool jump = false;
+	Vector3 startPosition;
+	public bool parede1;
+	public bool parede2;
 
-	void Start()
-	{
+	private int energy = 100;
+	public List<GameObject> life;
+
+	void Start() {
+		startPosition = gameObject.transform.position;
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator>();
 		anim.SetTrigger("Parado");
-		
-	}
+
+		life.AddRange(GameObject.FindGameObjectsWithTag("vida"));
+	
+}
 
 	void Update()
 	{
@@ -61,5 +70,35 @@ public class PlayerController : MonoBehaviour {
 				anim.SetTrigger("Corre");
 			}
 		}
+	}
+
+	private void OnTriggerEnter(Collider other) {
+		if (other.CompareTag("lava")) {
+			Die();
+		}
+
+		if (other.CompareTag("parede1")) {
+			parede1 = true;
+		}
+
+		if (other.CompareTag("parede2")) {
+			parede2 = true;
+		}
+
+		if (parede1 && parede2) {
+			Die();
+		}
+	}
+
+	void Die() {
+		var range = life.Count - 1;
+		if (life.Count > 0) {
+			Destroy(life[range]);
+			life.RemoveAt(range);
+		} else {
+			Application.LoadLevel(Application.loadedLevel);
+		}
+		
+		gameObject.transform.position = startPosition;
 	}
 }
